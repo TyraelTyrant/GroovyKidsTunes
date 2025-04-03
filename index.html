@@ -16,6 +16,7 @@
             background-size: cover;
             background-position: center;
             height: 100vh;
+            min-height: 50vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,12 +29,15 @@
             padding: 15px 0;
             text-align: center;
             width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .navbar a {
             color: white;
             text-decoration: none;
-            font-size: 1.5rem;
-            padding: 10px 20px;
+            font-size: 1.2rem;
+            padding: 10px 15px;
         }
         .navbar a:hover {
             background-color: #ff5722;
@@ -42,27 +46,46 @@
         /* Video Section */
         .video-section {
             background-color: red;
-            padding: 50px 0;
+            padding: 30px 10px;
             text-align: center;
         }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         .video-container iframe {
-            margin: 15px;
-            border: none;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            margin: 10px;
+            aspect-ratio: 16 / 9;
         }
         /* Info Section */
         .info-section {
             background-color: yellow;
-            padding: 50px 0;
+            padding: 30px 10px;
             text-align: center;
         }
         .info-table {
             width: 100%;
+            max-width: 800px;
             margin: 0 auto;
-            border-collapse: collapse;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .info-table td {
             padding: 20px;
             text-align: center;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+        }
+        .info-table iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
         }
         /* Footer */
         .footer {
@@ -70,6 +93,16 @@
             color: white;
             text-align: center;
             padding: 20px;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                height: 50vh;
+            }
+            .navbar a {
+                font-size: 1rem;
+                padding: 8px 12px;
+            }
         }
     </style>
 </head>
@@ -86,20 +119,20 @@
 <!-- Video Section -->
 <div class="video-section" id="home">
     <div class="video-container">
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/tHr3maaCrIk" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/ZrFnMCoUc2I" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/zoDYCX41n8c" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/Uyu440o90m8" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/1IbADBApymQ" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/glNVg6HjQUA" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/fmQbBFi6n1U" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/CDN5k69f8jw" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/CHgTyeTq038" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/r-Z8v1HfoDI" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/WsD4jPFaRe4" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/LmPn798LLS0" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/nRaSjWlrJqs" allowfullscreen></iframe>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/_-6xrUXwEws" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/tHr3maaCrIk" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/ZrFnMCoUc2I" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/zoDYCX41n8c" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Uyu440o90m8" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/1IbADBApymQ" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/glNVg6HjQUA" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/fmQbBFi6n1U" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/CDN5k69f8jw" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/CHgTyeTq038" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/r-Z8v1HfoDI" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/WsD4jPFaRe4" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/LmPn798LLS0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/nRaSjWlrJqs" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/_-6xrUXwEws" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -130,5 +163,3 @@
 
 </body>
 </html>
-
-
