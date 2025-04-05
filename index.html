@@ -70,11 +70,18 @@
       border: none;
     }
 
-    /* Info Section */
+    /* Info Section (Yellow) */
     .info-section {
       background-color: yellow;
       padding: 30px 10px;
       text-align: center;
+    }
+
+    .info-section .title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: black;
+      margin-bottom: 20px;
     }
 
     .info-table {
@@ -84,6 +91,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 20px;
     }
 
     .info-table td {
@@ -108,23 +116,7 @@
       padding: 20px;
     }
 
-    /* Mobile Carousel Behavior */
-    @media (max-width: 600px) {
-      .video-container {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-      }
-
-      .video-container iframe {
-        flex: 0 0 80%;
-        max-width: 80%;
-        scroll-snap-align: center;
-      }
-    }
-
+    /* Responsive Design */
     @media (max-width: 1024px) {
       .video-container iframe {
         flex: 1 1 calc(50% - 20px);
@@ -155,7 +147,7 @@
 
   <!-- Video Section -->
   <div class="video-section" id="home">
-    <div class="video-container" id="carousel">
+    <div class="video-container">
       <iframe src="https://www.youtube.com/embed/XmmV6hf4q6E" allowfullscreen></iframe>
       <iframe src="https://www.youtube.com/embed/tHr3maaCrIk" allowfullscreen></iframe>
       <iframe src="https://www.youtube.com/embed/ZrFnMCoUc2I" allowfullscreen></iframe>
@@ -174,8 +166,9 @@
     </div>
   </div>
 
-  <!-- Info Section -->
+  <!-- Info Section (Yellow) -->
   <div class="info-section">
+    <div class="title">Upcoming Videos</div>
     <table class="info-table">
       <tr>
         <td>
@@ -204,24 +197,6 @@
   <div class="footer">
     <p>Groovy Kids Tunes COPYRIGHT 2025</p>
   </div>
-
-  <!-- Auto-scroll JS for mobile -->
-  <script>
-    const carousel = document.getElementById("carousel");
-    let scrollAmount = 0;
-
-    function autoScroll() {
-      if (window.innerWidth <= 600 && carousel) {
-        scrollAmount += carousel.clientWidth * 0.8;
-        if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-          scrollAmount = 0;
-        }
-        carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-      }
-    }
-
-    setInterval(autoScroll, 3000); // every 3 seconds
-  </script>
 
 </body>
 </html>
