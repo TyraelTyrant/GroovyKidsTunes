@@ -1,185 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Groovy Kids</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        /* Header */
-        .header {
-            background-image: url('https://iili.io/37YXu0G.png');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            min-height: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        /* Navigation Bar */
-        .navbar {
-            background-color: black;
-            padding: 15px 0;
-            text-align: center;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            padding: 10px 15px;
-        }
-        .navbar a:hover {
-            background-color: #ff5722;
-            border-radius: 5px;
-        }
-        /* Video Section */
-        .video-section {
-            background-color: red;
-            padding: 30px 10px;
-            text-align: center;
-        }
-        .video-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .video-container iframe {
-            flex: 1 1 calc(25% - 20px);
-            max-width: calc(25% - 20px);
-            aspect-ratio: 16 / 9;
-            height: auto;
-            border: none;
-        }
-        /* Info Section */
-        .info-section {
-            background-color: yellow;
-            padding: 30px 10px;
-            text-align: center;
-        }
-        .info-table {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .info-table td {
-            padding: 20px;
-            text-align: center;
-            display: block;
-            width: 100%;
-            max-width: 300px;
-        }
-        .info-table iframe {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9;
-        }
-        /* Footer */
-        .footer {
-            background-color: red;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .video-container iframe {
-                flex: 1 1 calc(50% - 20px);
-                max-width: calc(50% - 20px);
-            }
-        }
-        @media (max-width: 600px) {
-            .video-container iframe {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
-        }
-        @media (max-width: 768px) {
-            .header {
-                height: 50vh;
-            }
-            .navbar a {
-                font-size: 1rem;
-                padding: 8px 12px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Groovy Kids</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    .header {
+      background-image: url('https://iili.io/37YXu0G.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: black;
+      padding: 15px 0;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 10px 15px;
+    }
+
+    .navbar a:hover {
+      background-color: #ff5722;
+      border-radius: 5px;
+    }
+
+    /* Video Section */
+    .video-section {
+      background-color: red;
+      padding: 30px 10px;
+      text-align: center;
+    }
+
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .video-container iframe {
+      flex: 1 1 calc(25% - 20px);
+      max-width: calc(25% - 20px);
+      aspect-ratio: 16 / 9;
+      height: auto;
+      border: none;
+    }
+
+    /* Info Section */
+    .info-section {
+      background-color: yellow;
+      padding: 30px 10px;
+      text-align: center;
+    }
+
+    .info-table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .info-table td {
+      padding: 20px;
+      text-align: center;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .info-table iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: red;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Mobile Carousel Behavior */
+    @media (max-width: 600px) {
+      .video-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+      }
+
+      .video-container iframe {
+        flex: 0 0 80%;
+        max-width: 80%;
+        scroll-snap-align: center;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .video-container iframe {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        height: 50vh;
+      }
+      .navbar a {
+        font-size: 1rem;
+        padding: 8px 12px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header Section -->
-<div class="header"></div>
+  <!-- Header -->
+  <div class="header"></div>
 
-<!-- Navigation Bar -->
-<div class="navbar">
+  <!-- Nav -->
+  <div class="navbar">
     <a href="#home">HOME</a>
-</div>
+  </div>
 
-<!-- Video Section -->
-<div class="video-section" id="home">
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/XmmV6hf4q6E" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/tHr3maaCrIk" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/ZrFnMCoUc2I" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/zoDYCX41n8c" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/Uyu440o90m8" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/1IbADBApymQ" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/glNVg6HjQUA" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/fmQbBFi6n1U" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/CDN5k69f8jw" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/CHgTyeTq038" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/r-Z8v1HfoDI" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/WsD4jPFaRe4" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/LmPn798LLS0" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/nRaSjWlrJqs" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/_-6xrUXwEws" allowfullscreen></iframe>
+  <!-- Video Section -->
+  <div class="video-section" id="home">
+    <div class="video-container" id="carousel">
+      <iframe src="https://www.youtube.com/embed/XmmV6hf4q6E" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/tHr3maaCrIk" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ZrFnMCoUc2I" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/zoDYCX41n8c" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Uyu440o90m8" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/1IbADBApymQ" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/glNVg6HjQUA" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/fmQbBFi6n1U" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/CDN5k69f8jw" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/CHgTyeTq038" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/r-Z8v1HfoDI" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/WsD4jPFaRe4" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/LmPn798LLS0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/nRaSjWlrJqs" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/_-6xrUXwEws" allowfullscreen></iframe>
     </div>
-</div>
+  </div>
 
-<!-- Info Section -->
-<div class="info-section">
+  <!-- Info Section -->
+  <div class="info-section">
     <table class="info-table">
-        <tr>
-            <td>
-                <h3>Newest Video</h3>
-                <iframe src="https://www.youtube.com/embed/XmmV6hf4q6E" allowfullscreen></iframe>
-            </td>
-            <td>
-                <h3>Highest Viewed Video</h3>
-                <iframe src="https://www.youtube.com/embed/ZrFnMCoUc2I" allowfullscreen></iframe>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <h3>Next Week's Video 1</h3>
-                <iframe src="https://www.youtube.com/embed/xxrBtSTF0lE" allowfullscreen></iframe>
-            </td>
-            <td>
-                <h3>Next Week's Video 2</h3>
-                <iframe src="https://www.youtube.com/embed/_0eRjhJSFCM" allowfullscreen></iframe>
-            </td>
-        </tr>
-    </table>    
-</div>
+      <tr>
+        <td>
+          <h3>Newest Video</h3>
+          <iframe src="https://www.youtube.com/embed/XmmV6hf4q6E" allowfullscreen></iframe>
+        </td>
+        <td>
+          <h3>Highest Viewed Video</h3>
+          <iframe src="https://www.youtube.com/embed/ZrFnMCoUc2I" allowfullscreen></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3>Next Week's Video 1</h3>
+          <iframe src="https://www.youtube.com/embed/xxrBtSTF0lE" allowfullscreen></iframe>
+        </td>
+        <td>
+          <h3>Next Week's Video 2</h3>
+          <iframe src="https://www.youtube.com/embed/_0eRjhJSFCM" allowfullscreen></iframe>
+        </td>
+      </tr>
+    </table>
+  </div>
 
-<!-- Footer -->
-<div class="footer">
+  <!-- Footer -->
+  <div class="footer">
     <p>Groovy Kids Tunes COPYRIGHT 2025</p>
-</div>
+  </div>
+
+  <!-- Auto-scroll JS for mobile -->
+  <script>
+    const carousel = document.getElementById("carousel");
+    let scrollAmount = 0;
+
+    function autoScroll() {
+      if (window.innerWidth <= 600 && carousel) {
+        scrollAmount += carousel.clientWidth * 0.8;
+        if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+          scrollAmount = 0;
+        }
+        carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    setInterval(autoScroll, 3000); // every 3 seconds
+  </script>
 
 </body>
 </html>
