@@ -27,7 +27,7 @@
 
     /* Navigation Bar */
     .navbar {
-      background-color: black;
+      background-color: black;  /* Ensure both navbars have the same black background */
       padding: 15px 0;
       text-align: center;
       width: 100%;
@@ -70,7 +70,7 @@
       border: none;
     }
 
-    /* Info Section (Yellow) - No Titles, Simple Videos */
+    /* Info Section (Yellow) - No Table, Simple Videos */
     .info-section {
       background-color: yellow;
       padding: 30px 10px;
@@ -155,22 +155,23 @@
 
   <!-- Info Section (Yellow) - Simple Video Embeds -->
   <div class="info-section">
-    <!-- Yellow Section Nav -->
-    <div class="navbar">
-      <a href="#newest">Newest Videos</a>
-      <a href="#highest">Highest Viewed</a>
-      <a href="#nextweek">Next Week's Videos</a>
-    </div>
-    
+    <h3>Newest Videos</h3>
     <iframe src="https://www.youtube.com/embed/XmmV6hf4q6E" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/tHr3maaCrIk" allowfullscreen></iframe>
+    <h3>Highest Viewed Video</h3>
     <iframe src="https://www.youtube.com/embed/ZrFnMCoUc2I" allowfullscreen></iframe>
+    <h3>Next Week's Video 1</h3>
     <iframe src="https://www.youtube.com/embed/xxrBtSTF0lE" allowfullscreen></iframe>
+    <h3>Next Week's Video 2</h3>
     <iframe src="https://www.youtube.com/embed/_0eRjhJSFCM" allowfullscreen></iframe>
   </div>
 
   <!-- Footer -->
   <div class="footer">
+    <!-- Footer Nav Bar (Black) -->
+    <div class="navbar">
+      <a href="#home">HOME</a>
+    </div>
     <p>Groovy Kids Tunes COPYRIGHT 2025</p>
   </div>
 
